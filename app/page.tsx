@@ -1,103 +1,400 @@
+import Link from "next/link";
 import Image from "next/image";
+import { ArrowRight, CheckCircle, Menu } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import image1 from "@/public/pfp/pfp1.png";
+import image2 from "@/public/pfp/pfp2.png";
+import image3 from "@/public/pfp/pfp3.png";
+import image4 from "@/public/pfp/pfp4.png";
+import { FloatingObject } from "@/components/FloatingObject";
 
-export default function Home() {
+export default function LandingPage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="flex min-h-screen flex-col">
+      <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
+      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div className="container mx-auto max-w-7xl px-8 md:px-12 flex h-16 items-center justify-between">
+          <div className="flex items-center gap-2 font-bold">
+            <span>The Hacktivists</span>
+          </div>
+          <nav className="hidden md:flex gap-6 float-right">
+            <Link
+              href="#features"
+              className="text-sm font-medium transition-colors hover:text-primary float-right"
+            >
+              Features
+            </Link>
+            <Link
+              href="#testimonials"
+              className="text-sm font-medium transition-colors hover:text-primary float-right"
+            >
+              Use Cases
+            </Link>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <Link
+              href="#faq"
+              className="text-sm font-medium transition-colors hover:text-primary float-right"
+            >
+              FAQ
+            </Link>
+          </nav>
+          <div className="flex items-center gap-4">
+            <Button variant="ghost" size="icon" className="md:hidden">
+              <Menu className="h-5 w-5" />
+              <span className="sr-only">Toggle menu</span>
+            </Button>
+          </div>
         </div>
+      </header>
+      <main className="flex-1">
+        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
+          <div className="container mx-auto max-w-7xl px-8 md:px-12">
+            <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
+              <div className="flex flex-col justify-center space-y-4">
+                <div className="space-y-2">
+                  <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+                    3D Scanning, Simplified.
+                  </h1>
+                  <p className="max-w-[600px] text-muted-foreground md:text-xl">
+                    Streamline your models, collaborate seamlessly, and achieve
+                    more together with our intuitive platform.
+                  </p>
+                </div>
+                <div className="flex flex-col gap-2 min-[400px]:flex-row">
+                  <Button size="lg" className="h-12">
+                    Get Started
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <CheckCircle className="h-4 w-4 text-primary" />
+                  <span>Beginner Friendly</span>
+                </div>
+              </div>
+              <FloatingObject />
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="features"
+          className="w-full py-12 md:py-24 lg:py-32 bg-muted/40"
+        >
+          <div className="container mx-auto max-w-7xl px-8 md:px-12">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <div className="inline-block rounded-lg bg-primary px-3 py-1 text-sm text-primary-foreground">
+                  Features
+                </div>
+                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
+                  Everything you need to succeed
+                </h2>
+                <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed">
+                  Our platform provides all the tools you need to streamline
+                  your workflow and boost productivity.
+                </p>
+              </div>
+            </div>
+            <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-3 lg:gap-12">
+              {features.map((feature, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col items-center space-y-4 rounded-lg border p-6 shadow-sm transition-transform hover:scale-101 hover:shadow-md" // Added hover classes
+                >
+                  <div className="rounded-full border p-4">{feature.icon}</div>
+                  <h3 className="text-xl font-bold">{feature.title}</h3>
+                  <p className="text-center text-muted-foreground">
+                    {feature.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+        <section id="testimonials" className="w-full py-12 md:py-24 lg:py-32">
+          <div className="container mx-auto max-w-7xl md:px-12">
+            <div className="absolute h-full -z-10 w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <div className="inline-block rounded-lg bg-primary px-3 py-1 text-sm text-primary-foreground">
+                  Use Cases
+                </div>
+                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
+                  Loved by businesses worldwide
+                </h2>
+                <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed">
+                  Don't just take our word for it. Here's what our customers
+                  have to say.
+                </p>
+              </div>
+            </div>
+            <div className="mx-auto grid max-w-5xl gap-6 py-12 lg:grid-cols-2 lg:gap-12">
+              {testimonials.map((testimonial, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col justify-between rounded-lg border p-6 shadow-sm bg-white"
+                >
+                  <div className="space-y-4">
+                    <div className="flex gap-1">
+                      {[...Array(5)].map((_, i) => (
+                        <svg
+                          key={i}
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="h-5 w-5 fill-primary text-primary"
+                        >
+                          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg>
+                      ))}
+                    </div>
+                    <p className="text-muted-foreground">
+                      {testimonial.content}
+                    </p>
+                  </div>
+                  <div className="mt-6 flex items-center gap-4">
+                    <Image
+                      src={testimonial.pfp}
+                      alt={`Profile picture of ${testimonial.author}`}
+                      width={50}
+                      height={50}
+                      className="rounded-full"
+                    />
+                    <div>
+                      <p className="font-medium">{testimonial.author}</p>
+                      <p className="text-sm text-muted-foreground">
+                        {testimonial.role}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="faq" className="w-full py-12 md:py-24 lg:py-32">
+          <div className="container mx-auto max-w-7xl px-8 md:px-12">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <div className="inline-block rounded-lg bg-primary px-3 py-1 text-sm text-primary-foreground">
+                  FAQ
+                </div>
+                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
+                  Frequently asked questions
+                </h2>
+                <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed">
+                  Find answers to common questions about our platform.
+                </p>
+              </div>
+            </div>
+            <div className="mx-auto grid max-w-5xl gap-6 py-12 lg:gap-12">
+              {faqs.map((faq, index) => (
+                <div key={index} className="space-y-2">
+                  <h3 className="text-xl font-bold">{faq.question}</h3>
+                  <p className="text-muted-foreground">{faq.answer}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+        <section className="w-full py-8 md:py-12 lg:py-16 bg-primary text-primary-foreground">
+          <div className="container mx-auto max-w-5xl px-4 md:px-6">
+            <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
+
+            <div className="space-y-2 text-center mb-6">
+              <h2 className="text-2xl font-bold tracking-tighter md:text-3xl/tight">
+                Peep the Deck
+              </h2>
+              <p className="md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed">
+                Check out our presentation to learn more about our approach.
+              </p>
+            </div>
+
+            <div className="flex justify-center">
+              <div className="w-full max-w-5xl aspect-[16/9] overflow-hidden rounded-lg shadow-lg">
+                <iframe
+                  src="https://docs.google.com/presentation/d/e/2PACX-1vQZwgYBL5IWujzq8xrRdg1fkvz-Xrw2yvfNDyGlP6w-t3BUC65OYMRllWF4_7UFmMU0yULP6yl9RAaF/embed?start=false&loop=false&delayms=3000"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      <footer className="w-full border-t py-6 md:py-12">
+        <div className="container mx-auto max-w-7xl px-8 md:px-12 flex flex-col gap-6 md:flex-row md:items-center">
+          <div className="flex items-center gap-2 font-bold">
+            <div className="h-8 w-8 rounded-full bg-primary"></div>
+            <span>The Hacktivists</span>
+          </div>
+          <nav className="flex gap-4 md:gap-6 md:ml-auto">
+            <Link
+              href="#"
+              className="text-sm font-medium transition-colors hover:text-primary"
+            >
+              Terms
+            </Link>
+            <Link
+              href="#"
+              className="text-sm font-medium transition-colors hover:text-primary"
+            >
+              Privacy
+            </Link>
+            <Link
+              href="#"
+              className="text-sm font-medium transition-colors hover:text-primary"
+            >
+              Cookies
+            </Link>
+          </nav>
+          <div className="md:ml-auto md:flex md:items-center md:gap-4">
+            <p className="text-xs text-muted-foreground md:order-last">
+              &copy; {new Date().getFullYear()} The Hacktivists Inc. All rights
+              reserved.
+            </p>
+          </div>
+        </div>
       </footer>
     </div>
   );
 }
+
+// Sample data
+const features = [
+  {
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="h-6 w-6"
+      >
+        <path d="M12 20h9" />
+        <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+      </svg>
+    ),
+    title: "High-Precision Capture",
+    description:
+      "Accurately digitize objects and spaces with millimeter-level precision.",
+  },
+  {
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="h-6 w-6"
+      >
+        <path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2v5Z" />
+        <path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1" />
+      </svg>
+    ),
+    title: "Versatile 3D Models",
+    description:
+      "Generate models compatible with various 3D software and applications.",
+  },
+  {
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="h-6 w-6"
+      >
+        <path d="M20 7h-9" />
+        <path d="M14 17H5" />
+        <circle cx="17" cy="17" r="3" />
+        <circle cx="7" cy="7" r="3" />
+      </svg>
+    ),
+    title: "Unlock New Possibilities",
+    description:
+      "Transform your workflows, enhance designs, and accelerate innovation accessibly.",
+  },
+];
+
+const testimonials = [
+  {
+    content:
+      "3D scanning has revolutionized our design process. We can now quickly create accurate as-built models, saving us countless hours and reducing errors.",
+    author: "Jane Miller",
+    role: "Principal Architect",
+    industry: "Architecture",
+    pfp: image1,
+  },
+  {
+    content:
+      "Our process is now faster and more efficient thanks to 3D scanning. It allows us to rapidly prototype and reverse engineer parts with incredible precision.",
+    author: "Roberta Chen",
+    role: "Lead Engineer",
+    industry: "Manufacturing",
+    pfp: image2,
+  },
+  {
+    content:
+      "Digitizing historical artifacts has never been easier. The level of detail we can capture with 3D scanning is simply amazing. This technology is vital for cultural preservation.",
+    author: "Dr. Emil Rodriguez",
+    role: "Curator",
+    industry: "Museum",
+    pfp: image3,
+  },
+  {
+    content:
+      "As a designer, 3D scanning has become an indispensable tool. It allows us to rapidly iterate on designs, create accurate prototypes, and communicate effectively.",
+    author: "David Kim",
+    role: "Senior Industrial Designer",
+    industry: "Product Design",
+    pfp: image4,
+  },
+];
+
+const faqs = [
+  {
+    question: "Why choose 3D scanning?",
+    answer: "Digitize the world with unprecedented accuracy and detail.",
+  },
+  {
+    question: "What's the key benefit?",
+    answer: "Transform physical spaces and objects into usable digital assets.",
+  },
+  {
+    question: "Who uses this technology?",
+    answer: "Architects, designers, engineers, and cultural heritage experts.",
+  },
+  {
+    question: "What can I create?",
+    answer: "Detailed models for design, visualization, and preservation.",
+  },
+  {
+    question: "What's the future of 3D?",
+    answer: "More accessible tools are enabling immersive digital experiences.",
+  },
+];
