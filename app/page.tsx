@@ -53,9 +53,9 @@ export default function LandingPage() {
         <section className="w-full md:py-10 lg:py-14 xl:py-18">
           <div className="container mx-auto max-w-7xl px-8 md:px-12">
             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
-              <div className="flex flex-col justify-center space-y-4">
-                <div className="space-y-2">
-                  <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+              <div className="flex flex-col justify-center space-y-4 sm:mt-8 md:mt-0">
+                <div className="space-y-2 sm:mt-6 md:mt-0">
+                  <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl xl:text-6xl/none">
                     3D Scanning, Simplified.
                   </h1>
                   <p className="max-w-[600px] text-muted-foreground md:text-xl">
@@ -69,7 +69,9 @@ export default function LandingPage() {
                   <span>Interact with the scan!</span>
                 </div>
               </div>
-              <ModelViewer />
+              <div className="mt-8 flex justify-center lg:mt-0">
+                <ModelViewer />
+              </div>
             </div>
           </div>
         </section>
@@ -118,10 +120,10 @@ export default function LandingPage() {
                   Use Cases
                 </div>
                 <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
-                  Loved by businesses worldwide
+                  Loved by industries worldwide
                 </h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed">
-                  Don't just take our word for it. Here's what our customers
+                  Don't just take our word for it. Here's what professionals
                   have to say.
                 </p>
               </div>
