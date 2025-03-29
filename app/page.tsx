@@ -1,12 +1,15 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, CheckCircle, Menu } from "lucide-react";
+import { ArrowRight, CheckCircle, Menu, MousePointer } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import image1 from "@/public/pfp/pfp1.png";
 import image2 from "@/public/pfp/pfp2.png";
 import image3 from "@/public/pfp/pfp3.png";
 import image4 from "@/public/pfp/pfp4.png";
-import { FloatingObject } from "@/components/FloatingObject";
+import ModelViewer from "@/components/ModelViewer";
+import GlassViewer from "@/components/GlassViewer";
 
 export default function LandingPage() {
   return (
@@ -17,7 +20,7 @@ export default function LandingPage() {
           <div className="flex items-center gap-2 font-bold">
             <span>The Hacktivists</span>
           </div>
-          <nav className="hidden md:flex gap-6 float-right">
+          <nav className="hidden md:flex gap-6 ml-auto">
             <Link
               href="#features"
               className="text-sm font-medium transition-colors hover:text-primary float-right"
@@ -47,7 +50,7 @@ export default function LandingPage() {
         </div>
       </header>
       <main className="flex-1">
-        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
+        <section className="w-full md:py-10 lg:py-14 xl:py-18">
           <div className="container mx-auto max-w-7xl px-8 md:px-12">
             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
               <div className="flex flex-col justify-center space-y-4">
@@ -60,18 +63,13 @@ export default function LandingPage() {
                     more together with our intuitive platform.
                   </p>
                 </div>
-                <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                  <Button size="lg" className="h-12">
-                    Get Started
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </div>
+                <div className="flex flex-col gap-2 min-[400px]:flex-row"></div>
                 <div className="flex items-center gap-2 text-sm">
-                  <CheckCircle className="h-4 w-4 text-primary" />
-                  <span>Beginner Friendly</span>
+                  <MousePointer className="h-4 w-4 text-primary" />
+                  <span>Interact with the scan!</span>
                 </div>
               </div>
-              <FloatingObject />
+              <ModelViewer />
             </div>
           </div>
         </section>
@@ -194,23 +192,29 @@ export default function LandingPage() {
                 </p>
               </div>
             </div>
-            <div className="mx-auto grid max-w-5xl gap-6 py-12 lg:gap-12">
-              {faqs.map((faq, index) => (
-                <div key={index} className="space-y-2">
-                  <h3 className="text-xl font-bold">{faq.question}</h3>
-                  <p className="text-muted-foreground">{faq.answer}</p>
-                </div>
-              ))}
+            <div className="mx-auto grid max-w-5xl py-12 lg:grid lg:grid-cols-2 lg:gap-12 items-start">
+              <div className="space-y-6">
+                {faqs.map((faq, index) => (
+                  <div key={index} className="space-y-2">
+                    <h3 className="text-xl font-bold">{faq.question}</h3>
+                    <p className="text-muted-foreground">{faq.answer}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="flex justify-center">
+                <GlassViewer />
+              </div>
             </div>
           </div>
         </section>
+
         <section className="w-full py-8 md:py-12 lg:py-16 bg-primary text-primary-foreground">
           <div className="container mx-auto max-w-5xl px-4 md:px-6">
             <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
 
             <div className="space-y-2 text-center mb-6">
               <h2 className="text-2xl font-bold tracking-tighter md:text-3xl/tight">
-                Peep the Deck
+                View the Deck
               </h2>
               <p className="md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed">
                 Check out our presentation to learn more about our approach.
@@ -234,29 +238,28 @@ export default function LandingPage() {
       <footer className="w-full border-t py-6 md:py-12">
         <div className="container mx-auto max-w-7xl px-8 md:px-12 flex flex-col gap-6 md:flex-row md:items-center">
           <div className="flex items-center gap-2 font-bold">
-            <div className="h-8 w-8 rounded-full bg-primary"></div>
-            <span>The Hacktivists</span>
+            <nav className="flex gap-4 md:gap-6 md:ml-auto">
+              <Link
+                href="https://www.linkedin.com/in/kuldeep-debnath/"
+                className="text-sm font-medium transition-colors hover:text-primary"
+              >
+                Kuldeep
+              </Link>
+              <Link
+                href="https://www.linkedin.com/in/kunsh-arora/"
+                className="text-sm font-medium transition-colors hover:text-primary"
+              >
+                Kunsh
+              </Link>
+              <Link
+                href="https://www.linkedin.com/in/lasheen-ahmed/"
+                className="text-sm font-medium transition-colors hover:text-primary"
+              >
+                Ahmed
+              </Link>
+            </nav>
           </div>
-          <nav className="flex gap-4 md:gap-6 md:ml-auto">
-            <Link
-              href="#"
-              className="text-sm font-medium transition-colors hover:text-primary"
-            >
-              Terms
-            </Link>
-            <Link
-              href="#"
-              className="text-sm font-medium transition-colors hover:text-primary"
-            >
-              Privacy
-            </Link>
-            <Link
-              href="#"
-              className="text-sm font-medium transition-colors hover:text-primary"
-            >
-              Cookies
-            </Link>
-          </nav>
+
           <div className="md:ml-auto md:flex md:items-center md:gap-4">
             <p className="text-xs text-muted-foreground md:order-last">
               &copy; {new Date().getFullYear()} The Hacktivists Inc. All rights
@@ -269,7 +272,6 @@ export default function LandingPage() {
   );
 }
 
-// Sample data
 const features = [
   {
     icon: (
