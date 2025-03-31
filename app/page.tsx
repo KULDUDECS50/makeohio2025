@@ -2,7 +2,15 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, CheckCircle, Menu, MousePointer } from "lucide-react";
+import {
+  ArrowRight,
+  CheckCircle,
+  Menu,
+  MousePointer,
+  Box,
+  Focus,
+  MapPlus,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import image1 from "@/public/pfp/pfp1.png";
 import image2 from "@/public/pfp/pfp2.png";
@@ -276,69 +284,19 @@ export default function LandingPage() {
 
 const features = [
   {
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="h-6 w-6"
-      >
-        <path d="M12 20h9" />
-        <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
-      </svg>
-    ),
+    icon: <Focus />,
     title: "High-Precision Capture",
     description:
       "Accurately digitize objects and spaces with millimeter-level precision.",
   },
   {
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="h-6 w-6"
-      >
-        <path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2v5Z" />
-        <path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1" />
-      </svg>
-    ),
+    icon: <Box />,
     title: "Versatile 3D Models",
     description:
       "Generate models compatible with various 3D software and applications.",
   },
   {
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="h-6 w-6"
-      >
-        <path d="M20 7h-9" />
-        <path d="M14 17H5" />
-        <circle cx="17" cy="17" r="3" />
-        <circle cx="7" cy="7" r="3" />
-      </svg>
-    ),
+    icon: <MapPlus />,
     title: "Unlock New Possibilities",
     description:
       "Transform your workflows, enhance designs, and accelerate innovation accessibly.",
