@@ -18,10 +18,16 @@ import image3 from "@/public/pfp/pfp3.png";
 import image4 from "@/public/pfp/pfp4.png";
 import ModelViewer from "@/components/ModelViewer";
 import GlassViewer from "@/components/GlassViewer";
+import Helmet from "react-helmet";
+import MetaImg from "@/public/pfp/meta.png";
 
 export default function LandingPage() {
   return (
     <div className="flex min-h-screen flex-col">
+      <Helmet>
+        <meta property="og:image" content="@/public/pfp/meta.png" />
+        <meta name="twitter:image" content="@/public/pfp/meta.png" />
+      </Helmet>
       <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto max-w-7xl px-8 md:px-12 flex h-16 items-center justify-between">
